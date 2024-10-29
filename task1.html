@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #output {
+        width: 600px;
+        height: 200px;
+        border: 3px solid rgb(0, 0, 0);
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .circle {
+        border: 3px solid rgb(43, 43, 43);
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+    }
+
+    button {
+        margin-top: 30px;
+        width: 150px;
+        font-size: 40px;
+        margin-left: 200px;
+    }
+</style>
+
+<body>
+    <div id="output" bis_skin_checked="1">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <button>NEXT</button>
+</body>
+
+</html>
+<script>
+    let button = document.querySelector("button")
+    let circles = document.querySelectorAll(".circle")
+    // circle[0].style.background = "red";
+    let currentI = 0
+    function click() {
+        circles.forEach(circle => {
+            circle.style.background = "";
+        });
+        if (currentI === 0) {
+            circles[0].style.background = "red"
+        }
+        else if (currentI === 1) {
+            circles[1].style.background = "yellow"
+        }
+        else if (currentI === 2) {
+            circles[2].style.background = "green"
+        }
+        currentI = (currentI + 1) % circles.length;
+    }
+    button.addEventListener("click", click)
+</script>

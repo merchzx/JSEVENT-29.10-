@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #output {
+        width: 600px;
+        height: 200px;
+        border: 3px solid rgb(0, 0, 0);
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <div id="output" bis_skin_checked="1">
+        <div class="divForlorem">
+            <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel assumenda alias ea
+                necessitatibus sunt quaerat est quos natus beatae vitae tempore itaque atque illo, cupiditate blanditiis
+                amet reiciendis rerum dignissimos!</p>
+        </div>
+        <div class="divForlorem">
+            <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quo neque nihil
+                repellat quas libero corrupti laboriosam est enim vero porro aliquid eveniet eos, magnam sint mollitia
+                sit
+                harum. Saepe.</p>
+        </div>
+        <div class="divForlorem">
+            <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eveniet doloremque dolores
+                natus dicta dolorem veritatis similique placeat aliquid magni, pariatur in perferendis iste. Dolorum ut
+                in
+                voluptatem sed doloribus!</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let button = document.querySelector("button")
+    let divs = document.querySelectorAll(".lorem")
+    // circle[0].style.background = "red";
+    let currentI = 0
+    function click(e) {
+        divs.forEach(div => {
+            div.style.background = "";
+        });
+        e.currentTarget.style.background = "orange"
+    }
+    divs.forEach(div => {
+        div.addEventListener("click", click)
+
+    })
+</script>
